@@ -1,0 +1,2 @@
+class AccountRollsController < ApplicationController
+end
