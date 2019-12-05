@@ -1,0 +1,14 @@
+
+<h1>Make an account</h1>
+
+<%= form_for :account, url: '/accounts' do |f| %>
+  Username: <%= f.text_field :username %> <br /> <br>
+  Password: <%= f.password_field :password %> <br /><br>
+  Password Confirmation: <%= f.password_field :password_confirmation %> <br /><br>
+  <%= f.submit "Submit" %>
+<% end %> <br /><br>
+
+<p><form action="/login" method="get">
+    <input type="submit" value="Already have an account" 
+         name="Submit" id="frm1_submit" />
+</form></p>

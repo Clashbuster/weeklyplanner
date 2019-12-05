@@ -8,11 +8,11 @@
 
 
 
- taylor = Account.create(:username => 'taylor')
- devin = Account.create(:username => 'devin')
+#  taylor = Account.create(:username => 'taylor')
+#  devin = Account.create(:username => 'devin')
 
- tiffany = Account.create(:username => 'tiffany')
- drew = Account.create(:username => 'drew')
+#  tiffany = Account.create(:username => 'tiffany')
+#  drew = Account.create(:username => 'drew')
 
 
 
@@ -27,7 +27,7 @@ leavensworth = Plan.create(:location => "Leavensworth", :name => "christmas trip
 admin = Roll.create(:name => "administrator")
 
 taylor.account_groups.create(account_id: "#{taylor.id}", group_id: "#{mvp.id}" )
-tiffany.account_groups.create(account_id: "#{tiffany.id}", group_id: "#{gc.id}" )
+# tiffany.account_groups.create(account_id: "#{tiffany.id}", group_id: "#{gc.id}" )
 
 devin.groups.create(:name => 'huge dudes', :description => "swoll")
 

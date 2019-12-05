@@ -1,0 +1,13 @@
+<h1> <%= @plan.name %></h1>
+
+<%= @plan.location %> <br />
+<p><%= @plan.description %></p>
+
+
+<%= button_to "Edit this plan", edit_plan_path(@plan), :method => :get %>
+
+
+<%= button_to "Delete plan", { action: "destroy", id: @plan.id },
+                                method: :delete, data: { confirm: "Are you sure?" } %>
+
+<%= button_to "Go back to plans", plans_path, :method => :get %>
