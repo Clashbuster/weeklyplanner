@@ -1,8 +1,15 @@
-<h1>hello</h1>
+<h1>Groups</h1>
 
 <% @groups.each do |g|%>
 
-<%= link_to g.name, group_path(g)%>
+<%= link_to g.name, group_path(g)%> <br />
 
 <% end %>
+
+<br>
+
+<%= button_to "Make a new Group", new_group_path, :method => :get %> <br />
+
+<%= button_to "Back to plans", plans_path , :method => :get %> <br />
+
 

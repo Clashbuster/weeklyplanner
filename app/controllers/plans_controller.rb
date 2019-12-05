@@ -1,4 +1,5 @@
 class PlansController < ApplicationController
+
     
     
     def index
@@ -9,6 +10,7 @@ class PlansController < ApplicationController
         @friday_plans = Plan.get_day('friday')
         @saturday_plans = Plan.get_day('saturday')
         @sunday_plans = Plan.get_day('sunday')
+
     end
 
     def show
@@ -17,13 +19,15 @@ class PlansController < ApplicationController
 
     def new
         @plan = Plan.new
+        @account = Account.find(session[:user_id])
     end
 
     def create
-        @plan = Plan.new(plan_params)
-        # byebug
-         if @plan.valid?
-            @plan.save
+        @account = Account.find(session[:user_id])
+        new_plan = @account.plans.build(plan_params)
+        
+         if new_plan.valid?
+            new_plan.save
             redirect_to plans_path
          else
             flash[:message] = "plans must have a name and day"

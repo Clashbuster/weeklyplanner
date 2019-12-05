@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     get '/signup', to: 'accounts#new'
     post '/signup', to: 'accounts#create'
     get '/plans', to: 'plans#index'
+    post 'groups/join', to: 'groups#join_group'
+    post 'groups/leave', to: 'groups#leave_group'
 
     
     # root to: "plans#index"

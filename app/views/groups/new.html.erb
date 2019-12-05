@@ -1,0 +1,14 @@
+<h1>Make a new group</h1>
+
+<%= form_for @group do |f| %> <br />
+
+   <%= f.label :name%> <br />
+   <%= f.text_field :name %> <br />
+
+   <%= f.label :description%> <br />
+   <%= f.text_area :description %> <br />
+
+   <%= f.submit "Sumbit"%>
+<%end%> <br />
+
+<%= button_to "Go back to groups", groups_path , :method => :get %>

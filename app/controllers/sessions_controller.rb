@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  skip_before_action :require_login, only: [:create, :new]
+
   # skip_before_action :authorized, only: [:new, :create, :welcome]
 
   # def new
@@ -57,7 +59,7 @@ class SessionsController < ApplicationController
   end
 
   def current_user
-    @account = Account.find(session[:user_id])
-end
+   Account.find(session[:user_id])
+  end
 
 end
