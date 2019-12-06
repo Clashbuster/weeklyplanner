@@ -32,7 +32,7 @@
   
   /* Style page content */
   .main {
-
+    list-style: none;
     margin-left: 160px; /* Same as the width of the sidebar */
     padding: 0px 10px;
   }
@@ -42,3 +42,15 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+
+  .sidenav {
+    ul li {
+        border-radius: 4px;
+        list-style: none;
+          padding: 20px;
+    }
+}
+
+        .sidenav h1 {
+            padding: 20px;
+        }
