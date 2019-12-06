@@ -1,14 +1,32 @@
-<h1>Make a new group</h1>
 
-<%= form_for @group do |f| %> <br />
 
-   <%= f.label :name%> <br />
-   <%= f.text_field :name %> <br />
 
-   <%= f.label :description%> <br />
-   <%= f.text_area :description %> <br />
+<!-- Side navigation -->
+<div class="sidenav">
+        <h1>Make a new group</h1>
 
-   <%= f.submit "Sumbit"%>
-<%end%> <br />
+        <ul> <%= button_to "Groups", groups_path , :method => :get %> <br /></ul>
 
-<%= button_to "Go back to groups", groups_path , :method => :get %>
+        <ul> <%= button_to "Plans", plans_path , :method => :get %> <br /></ul>
+
+        <ul> <%= button_to "Account", account_path(session[:user_id]) , :method => :get %> </ul>
+           
+      </div>
+      
+      <!-- Page content -->
+      <div class="main">
+                    
+            <%= form_for @group do |f| %> <br />
+
+            <%= f.label :name%> <br />
+            <%= f.text_field :name %> <br />
+         
+            <%= f.label :description%> <br />
+            <%= f.text_area :description %> <br />
+         
+            <%= f.submit "Sumbit"%>
+         <%end%> <br />
+            
+  
+  </div>
+

@@ -1,16 +1,31 @@
-<h1><%= @account.username %></h1>
 
-<p>   groups owned: </p> 
+
+<!-- Side navigation -->
+<div class="sidenav">
+        <h1><%= @account.username %></h1>
+
+        <ul> <%= button_to "Groups", groups_path , :method => :get %> <br /></ul>
+
+        <ul> <%= button_to "Plans", plans_path , :method => :get %> <br /></ul>
+
+        <ul><%= button_to "Log out", '/logout' , :method => :post %></ul>
+           
+      </div>
+      
+      <!-- Page content -->
+      <div class="main">
+                    
+            <p>   groups owned: </p> 
     
-    <% @all_owned_groups.each do |g| %>
-    <%= link_to g.name, group_path(g) %> <br>
-    <% end %>
-
-    <p>   group membership: </p> 
-
-    <% @account.groups.each do |g| %>
-    <%= link_to g.name, group_path(g) %> <br/>
-    <% end %> <br>
-
-    <%= button_to "Back to plans", plans_path , :method => :get %> <br />
-    <%= button_to "Log out", '/logout' , :method => :post %>
+            <% @all_owned_groups.each do |g| %>
+            <%= link_to g.name, group_path(g) %> <br>
+            <% end %>
+        
+            <p>   group membership: </p> 
+        
+            <% @account.groups.each do |g| %>
+            <%= link_to g.name, group_path(g) %> <br/>
+            <% end %> <br>
+            
+  
+  </div>

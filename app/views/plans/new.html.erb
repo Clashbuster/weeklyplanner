@@ -1,25 +1,36 @@
-<h1>New plan</h1>
 
-   <%= form_for @plan do |f| %> <br />
+<!-- Side navigation -->
+<div class="sidenav">
+      <h1>New plan</h1>
 
-   <%= f.label :location%> <br />
-   <%= f.text_field :location %> <br />
+     
 
-   <%= f.label :name%> <br />
-   <%= f.text_field :name %> <br />
+      <ul> <%= button_to "Plans", plans_path , :method => :get %> <br /></ul>
+      <ul></ul>  <%= button_to "Account", account_path(session[:user_id]) , :method => :get %> </ul>
 
-   <%= f.label :day %> <br />
-   <%= f.select :day, options_for_select(Plan.possible_days) %> <br />
+      
+         
+    </div>
+    
+    <!-- Page content -->
+    <div class="main">
+                  
+         <%= form_for @plan do |f| %> <br />
 
+         <%= f.label :location%> <br />
+         <%= f.text_field :location %> <br />
+      
+         <%= f.label :name%> <br />
+         <%= f.text_field :name %> <br />
+      
+         <%= f.label :day %> <br />
+         <%= f.select :day, options_for_select(Plan.possible_days) %> <br />
+      
+      
+         <%= f.label :description%> <br />
+         <%= f.text_area :description%> <br />
+      
+         <%= f.submit "Sumbit"%>
+      <%end%> <br />
 
-   <%= f.label :description%> <br />
-   <%= f.text_area :description%> <br />
-
-   <%= f.label 'Invite group?'%> <br />
-   <%= f.collection_select :group_id, @account.groups, :id, :name %> <br />
-
-   <%= f.submit "Sumbit"%>
-<%end%> <br />
-
-
-<%= button_to "Plans", plans_path , :method => :get %>
+</div>

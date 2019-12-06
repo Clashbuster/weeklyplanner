@@ -1,13 +1,26 @@
-<h1>Groups</h1>
 
-<% @groups.each do |g|%>
 
-<%= link_to g.name, group_path(g)%> <br />
 
-<% end %>
+<!-- Side navigation -->
+<div class="sidenav">
+        <h1>Groups</h1>
 
-<br>
+        <ul> <%= button_to "New group", new_group_path, :method => :get %> <br /></ul>
 
-<%= button_to "Make a new Group", new_group_path, :method => :get %> <br />
+            <ul> <%= button_to "Plans", plans_path , :method => :get %> <br /></ul>
 
-<%= button_to "Back to plans", plans_path , :method => :get %> <br />
+            <ul> <%= button_to "Account", account_path(session[:user_id]) , :method => :get %> </ul>
+           
+      </div>
+      
+      <!-- Page content -->
+      <div class="main">
+                    
+            <ul>  <% @groups.each do |g|%></ul>
+
+            <ul> <%= link_to g.name, group_path(g)%> <br /></ul>
+            
+            <ul> <% end %></ul>
+            
+  
+  </div>

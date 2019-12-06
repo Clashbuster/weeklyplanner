@@ -1,13 +1,26 @@
-<h1> <%= @plan.name %></h1>
-
-<%= @plan.location %> <br />
-<p><%= @plan.description %></p>
 
 
-<%= button_to "Edit this plan", edit_plan_path(@plan), :method => :get %>
 
 
-<%= button_to "Cancel plan", { action: "destroy", id: @plan.id },
-                                method: :delete, data: { confirm: "Are you sure?" } %>
-
-<%= button_to "Go back to plans", plans_path, :method => :get %>
+<!-- Side navigation -->
+<div class="sidenav">
+        <h1> <%= @plan.name %></h1>
+    
+        <ul><%= button_to "Edit", edit_plan_path(@plan), :method => :get %> </ul>
+        <ul> <%= button_to "Cancel", { action: "destroy", id: @plan.id },
+            method: :delete, data: { confirm: "Are you sure?" } %></ul>
+        <ul><%= button_to "Plans", plans_path, :method => :get %> </ul>
+        <ul> <%= button_to "Account", account_path(session[:user_id]) , :method => :get %> </ul>
+        
+           
+      </div>
+      
+      <!-- Page content -->
+      <div class="main">
+                    
+            <%= @plan.location %> <br />
+            <p><%= @plan.description %></p>
+            
+    
+    </div>
+    

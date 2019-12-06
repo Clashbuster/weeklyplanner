@@ -1,24 +1,40 @@
-<h1><%= @group.name %></h1>
-creator: <%= @group.creator %> <br> <br>
-<%= @group.description %>
 
-<p>Members:</p>
 
-<%@all_members.each do |m|%>
-    <div><%= link_to m.username, account_path(m) %></div>
-    <%end%> <br>
 
-    <% if !AccountGroup.find_by(group_id: @group.id, account_id: session[:user_id]) %>
-        <%= button_to "Join", groups_join_path , style:"", method: :post, remote: true, params: { id: @group.id } %> <br />
-    <% else %>
-        <%= button_to "Leave", groups_leave_path , style:"", method: :post, remote: true, params: { id: @group.id } %> <br />
-    <% end %>
+    <div class="sidenav">
+            <h1><%= @group.name %></h1>
 
-    <% if @group.creator == Account.find(session[:user_id]).username %>
-    <%= button_to "disperse group", { action: "destroy", id: @group.id },
-    method: :delete, data: { confirm: "Are you sure?" } %> <br>
-    <%end%>
+           <ul> <%= button_to "Plans", plans_path , :method => :get %> <br /></ul>
 
-    <%= button_to "Back to plans", plans_path , :method => :get %> <br />
+           <ul> <%= button_to "Groups", groups_path, :method => :get %> <br /></ul>
+               
 
-    <%= button_to "Back to groups", groups_path, :method => :get %> <br />
+           <ul> <% if !AccountGroup.find_by(group_id: @group.id, account_id: session[:user_id]) %>
+            <%= button_to "Join", groups_join_path , style:"", method: :post, remote: true, params: { id: @group.id } %> <br />
+        <% else %>
+            <%= button_to "Leave", groups_leave_path , style:"", method: :post, remote: true, params: { id: @group.id } %> <br />
+        <% end %>
+    
+        <% if @group.creator == Account.find(session[:user_id]).username %>
+        <%= button_to "disperse group", { action: "destroy", id: @group.id },
+        method: :delete, data: { confirm: "Are you sure?" } %> <br>
+        <%end%></ul>
+
+        <ul> <%= button_to "Account", account_path(session[:user_id]) , :method => :get %> </ul>
+          </div>
+          
+          <!-- Page content -->
+          <div class="main">
+                        
+                creator: <%= @group.creator %> <br> <br>
+                <%= @group.description %>
+                
+                <p>Members:</p>
+                
+                <%@all_members.each do |m|%>
+                    <div><%= link_to m.username, account_path(m) %></div>
+                    <%end%> <br>
+                
+                
+      
+      </div>
