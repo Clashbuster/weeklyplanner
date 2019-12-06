@@ -16,23 +16,25 @@
 
 
 
-mvp = Group.create(:name => 'MVP', :description => "best mod at flatiron school")
-gc = Group.create(:name => 'GC', :description => "good coders" )
+# mvp = Group.create(:name => 'MVP', :description => "best mod at flatiron school")
+# gc = Group.create(:name => 'GC', :description => "good coders" )
 
 
-# enchant = Plan.create(:location => "t mobile park", :name => "enchant", :description => "see christmas lights and maze", :group_id => mvp.id, :day => "tuesday" )
-leavensworth = Plan.create(:location => "Leavensworth", :name => "christmas trip", :description => "see christmas lights and play in the snow", :group_id => gc.id, :day => "wednesday")
+# # enchant = Plan.create(:location => "t mobile park", :name => "enchant", :description => "see christmas lights and maze", :group_id => mvp.id, :day => "tuesday" )
+# leavensworth = Plan.create(:location => "Leavensworth", :name => "christmas trip", :description => "see christmas lights and play in the snow", :group_id => gc.id, :day => "wednesday")
 
-# mod = Roll.create(:name => "moderator")
-admin = Roll.create(:name => "administrator")
+# # mod = Roll.create(:name => "moderator")
+# admin = Roll.create(:name => "administrator")
 
-taylor.account_groups.create(account_id: "#{taylor.id}", group_id: "#{mvp.id}" )
-# tiffany.account_groups.create(account_id: "#{tiffany.id}", group_id: "#{gc.id}" )
+# taylor.account_groups.create(account_id: "#{taylor.id}", group_id: "#{mvp.id}" )
+# # tiffany.account_groups.create(account_id: "#{tiffany.id}", group_id: "#{gc.id}" )
 
-devin.groups.create(:name => 'huge dudes', :description => "swoll")
+# devin.groups.create(:name => 'huge dudes', :description => "swoll")
 
-taylor.plans.create(:location => "t mobile park", :name => "enchant", :description => "see christmas lights and maze", :group_id => mvp.id, :day => "tuesday" )
-taylor.rolls.create(:name => "moderator")
+# taylor.plans.create(:location => "t mobile park", :name => "enchant", :description => "see christmas lights and maze", :group_id => mvp.id, :day => "tuesday" )
+# taylor.rolls.create(:name => "moderator")
+
+
 
 
 

@@ -1,50 +1,62 @@
-<h1>Plans</h1>
-<h1>Monday</h1>
-<% @monday_plans.each do |p|%>
-<%= link_to p.name, plan_path(p)%> <br />
-<% end %>
 
 
-<h1>Tuesday</h1>
-<% @tuesday_plans.each do |p|%>
-<%= link_to p.name, plan_path(p)%><br />
-<% end %>
 
+<!-- Side navigation -->
+<div class="sidenav">
+        <h1>Plans</h1>
+            <ul> 
+              <%= button_to "New plan", new_plan_path , :method => :get %>  
+            <%= button_to "Groups", groups_path, :method => :get %>
+             <%= button_to "Account", account_path(session[:user_id]) , :method => :get %>
+            
+            </ul>
+      </div>
+      
+      <!-- Page content -->
+      <div class="main">
+                    
+                    
+                    <ul>  Monday
+                    <% @monday_plans.each do |p|%>
+                    <li><%= link_to p.name, plan_path(p)%>
+                    <% end %></li></ul>
+                    
+                    
+                    <ul> Tuesday 
+                    <% @tuesday_plans.each do |p|%>
+                    <li><%= link_to p.name, plan_path(p)%>
+                    <% end %></li></ul>
+                    
+                    
+                    <ul>  Wednesday 
+                    <% @wednesday_plans.each do |p|%>
+                    <li><%= link_to p.name, plan_path(p)%>
+                    <% end %></li></ul>
+                    
+                    
+                    <ul> Thursday 
+                    <% @thursday_plans.each do |p|%>
+                    <li><%= link_to p.name, plan_path(p)%>
+                    <% end %></li></ul>
+                    
+                    
+                    <ul>  Friday 
+                    <% @friday_plans.each do |p|%>
+                    <li><%= link_to p.name, plan_path(p)%>
+                    <% end %></li></ul>
+                    
+                    
+                    <ul> Saturday 
+                    <% @saturday_plans.each do |p|%>
+                    <li> <%= link_to p.name, plan_path(p)%>
+                    <% end %></li></ul>
+                    
+                    
+                    <ul>  Sunday 
+                    <% @sunday_plans.each do |p|%>
+                    <li><%= link_to p.name, plan_path(p)%>
+                    <% end %></li></ul>
+            
 
-<h1>Wednesday</h1>
-<% @wednesday_plans.each do |p|%>
-<%= link_to p.name, plan_path(p)%>
-   
-   <br />
-<% end %>
-
-
-<h1>Thursday</h1>
-<% @thursday_plans.each do |p|%>
-<%= link_to p.name, plan_path(p)%><br />
-<% end %>
-
-
-<h1>Friday</h1>
-<% @friday_plans.each do |p|%>
-<%= link_to p.name, plan_path(p)%><br />
-<% end %>
-
-
-<h1>Saturday</h1>
-<% @saturday_plans.each do |p|%>
-<%= link_to p.name, plan_path(p)%><br />
-<% end %>
-
-
-<h1>Sunday</h1>
-<% @sunday_plans.each do |p|%>
-<%= link_to p.name, plan_path(p)%><br />
-<% end %>
-
-
-<%= button_to "Make a new plan", new_plan_path , :method => :get %> <br />
-
-<%= button_to "View groups", groups_path, :method => :get %> <br />
-
-<%= button_to "view your account", account_path(session[:user_id]) , :method => :get %> <br />
+</div>
+                    
